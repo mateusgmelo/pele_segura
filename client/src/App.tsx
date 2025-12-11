@@ -8,6 +8,17 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 
+import RightsListPage from "@/pages/rights-list";
+import DutiesListPage from "@/pages/duties-list";
+import WhatAreInjuriesPage from "@/pages/injuries-what-are";
+import CausesPage from "@/pages/injuries-causes";
+import StagesPage from "@/pages/injuries-stages";
+import RiskPage from "@/pages/injuries-risk";
+import PreventionPage from "@/pages/injuries-prevention";
+import AlarmsPage from "@/pages/alarms";
+import PatientsPage from "@/pages/patients";
+import PatientsListPage from "@/pages/patients-list";
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
@@ -23,9 +34,37 @@ function App() {
         <Route path="/rights">
            <Layout><RightsPage /></Layout>
         </Route>
+        
+        <Route path="/rights/list">
+           <Layout><RightsListPage /></Layout>
+        </Route>
+
+        <Route path="/duties/list">
+           <Layout><DutiesListPage /></Layout>
+        </Route>
 
         <Route path="/injuries">
            <Layout><InjuriesPage /></Layout>
+        </Route>
+
+        <Route path="/injuries/what-are">
+           <Layout><WhatAreInjuriesPage /></Layout>
+        </Route>
+
+        <Route path="/injuries/causes">
+           <Layout><CausesPage /></Layout>
+        </Route>
+
+        <Route path="/injuries/stages">
+           <Layout><StagesPage /></Layout>
+        </Route>
+
+        <Route path="/injuries/risk">
+           <Layout><RiskPage /></Layout>
+        </Route>
+
+        <Route path="/injuries/prevention">
+           <Layout><PreventionPage /></Layout>
         </Route>
 
         {/* Placeholders for other routes */}
@@ -33,13 +72,16 @@ function App() {
            <Layout><InjuriesPage /></Layout> {/* Reusing layout for now */}
         </Route>
         <Route path="/alarms">
-           <Layout><HomePage /></Layout> {/* Reusing layout for now */}
+           <Layout><AlarmsPage /></Layout>
         </Route>
          <Route path="/search">
            <Layout><HomePage /></Layout> {/* Reusing layout for now */}
         </Route>
-         <Route path="/patients">
-           <Layout><HomePage /></Layout> {/* Reusing layout for now */}
+        <Route path="/patients">
+           <Layout><PatientsListPage /></Layout>
+        </Route>
+        <Route path="/patients/new">
+           <Layout><PatientsPage /></Layout>
         </Route>
 
         <Route component={NotFound} />

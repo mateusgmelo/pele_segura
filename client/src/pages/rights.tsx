@@ -28,24 +28,28 @@ export default function RightsPage() {
 
         <div className="grid grid-cols-2 gap-4 mt-auto mb-12">
           {/* Card 1: Direitos */}
-          <Card className="bg-[#F1F8E9] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-            <CardContent className="p-0 flex flex-col items-center gap-4">
-              <Check size={50} className="text-primary/80" strokeWidth={2} />
-              <span className="text-sm font-semibold text-primary/90 leading-tight">
-                Direitos do(a)<br/>cuidador(a)
-              </span>
-            </CardContent>
-          </Card>
+          <Link href="/rights/list">
+            <Card className="bg-[#F1F8E9] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
+                <CardContent className="p-0 flex flex-col items-center gap-4">
+                <Check size={50} className="text-primary/80" strokeWidth={2} />
+                <span className="text-sm font-semibold text-primary/90 leading-tight">
+                    Direitos do(a)<br/>cuidador(a)
+                </span>
+                </CardContent>
+            </Card>
+          </Link>
 
           {/* Card 2: Deveres */}
-          <Card className="bg-[#C8E6C9] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-            <CardContent className="p-0 flex flex-col items-center gap-4">
-              <CircleAlert size={50} className="text-primary/80" strokeWidth={2} />
-              <span className="text-sm font-semibold text-primary/90 leading-tight">
-                Deveres do(a)<br/>cuidador(a)
-              </span>
-            </CardContent>
-          </Card>
+          <Link href="/duties/list">
+            <Card className="bg-[#C8E6C9] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
+                <CardContent className="p-0 flex flex-col items-center gap-4">
+                <CircleAlert size={50} className="text-primary/80" strokeWidth={2} />
+                <span className="text-sm font-semibold text-primary/90 leading-tight">
+                    Deveres do(a)<br/>cuidador(a)
+                </span>
+                </CardContent>
+            </Card>
+          </Link>
         </div>
       </div>
     </div>
