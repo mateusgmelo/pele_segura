@@ -69,7 +69,7 @@ function App() {
 
         {/* Placeholders for other routes */}
         <Route path="/prevention">
-           <Layout><InjuriesPage /></Layout> {/* Reusing layout for now */}
+           <Layout><PreventionPage /></Layout> 
         </Route>
         <Route path="/alarms">
            <Layout><AlarmsPage /></Layout>
