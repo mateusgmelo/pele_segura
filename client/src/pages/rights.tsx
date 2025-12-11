@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Flower, Check, CircleAlert } from "lucide-react";
+import { Link } from "wouter";
 
 export default function RightsPage() {
   return (
