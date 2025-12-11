@@ -1,6 +1,5 @@
 import { Switch, Route, useLocation } from "wouter";
 import { Layout } from "@/components/layout/Layout";
-import LoginPage from "@/pages/login";
 import HomePage from "@/pages/home";
 import ScanPage from "@/pages/scan";
 import ResultsPage from "@/pages/results";
@@ -15,18 +14,17 @@ function App() {
   const [location] = useLocation();
   
   // Pages that don't need the standard layout wrapper with bottom nav
-  const noLayoutPages = ["/scan", "/login"];
+  const noLayoutPages = ["/scan"];
   const isNoLayout = noLayoutPages.includes(location);
 
   return (
     <QueryClientProvider client={queryClient}>
       <Switch>
-        <Route path="/login" component={LoginPage} />
         
         {/* Main App Routes */}
         <Route path="/">
-           {/* Redirect to login initially if needed, but for prototype go to login */}
-           <LoginPage />
+           {/* Redirect to home initially */}
+           <Layout><HomePage /></Layout>
         </Route>
 
         <Route path="/home">

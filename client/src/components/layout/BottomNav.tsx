@@ -12,7 +12,6 @@ export function BottomNav() {
     { icon: User, label: "Perfil", path: "/profile" },
   ];
 
-  if (location === "/" || location === "/login") return null;
 
   return (
     <div className="absolute bottom-0 left-0 right-0 bg-background border-t border-border px-6 pb-8 pt-3 sm:pb-6 z-40">
