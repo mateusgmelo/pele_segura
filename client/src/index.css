@@ -36,90 +36,50 @@
   --color-border: hsl(var(--border));
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
-  
-  --color-chart-1: hsl(var(--chart-1));
-  --color-chart-2: hsl(var(--chart-2));
-  --color-chart-3: hsl(var(--chart-3));
-  --color-chart-4: hsl(var(--chart-4));
-  --color-chart-5: hsl(var(--chart-5));
 }
 
 :root {
-  /* Medical Clean Theme */
-  /* Primary: Soft Teal/Blue for trust and health */
-  --primary: 187 70% 42%;
+  /* Pele Segura Theme - Green */
+  /* Primary Green: #388E3C */
+  --primary: 123 43% 39%; 
   --primary-foreground: 0 0% 100%;
 
-  /* Background: clean white/off-white */
+  /* Background: White */
   --background: 0 0% 100%;
-  --foreground: 222 47% 11%;
+  --foreground: 123 43% 15%; /* Dark green for text */
 
-  /* Card: White with shadow */
+  /* Secondary: Light Green #C8E6C9 */
+  --secondary: 122 38% 85%;
+  --secondary-foreground: 123 43% 15%;
+
+  /* Muted/Grayish Green #F1F8E9 */
+  --muted: 86 31% 95%;
+  --muted-foreground: 123 43% 25%;
+
   --card: 0 0% 100%;
-  --card-foreground: 222 47% 11%;
+  --card-foreground: 123 43% 15%;
+  --card-border: 123 43% 90%;
 
-  /* Popover */
   --popover: 0 0% 100%;
-  --popover-foreground: 222 47% 11%;
+  --popover-foreground: 123 43% 15%;
 
-  /* Secondary: Soft Gray/Blue */
-  --secondary: 210 40% 96%;
-  --secondary-foreground: 222 47% 11%;
+  --accent: 122 38% 85%;
+  --accent-foreground: 123 43% 15%;
 
-  /* Muted */
-  --muted: 210 40% 96%;
-  --muted-foreground: 215 16% 47%;
-
-  /* Accent: Light Teal */
-  --accent: 187 60% 96%;
-  --accent-foreground: 187 70% 42%;
-
-  /* Destructive */
   --destructive: 0 84% 60%;
-  --destructive-foreground: 210 40% 98%;
+  --destructive-foreground: 0 0% 98%;
 
-  /* Borders & Inputs */
-  --border: 214 32% 91%;
-  --input: 214 32% 91%;
-  --ring: 187 70% 42%;
+  --border: 123 43% 90%;
+  --input: 123 43% 90%;
+  --ring: 123 43% 39%;
 
-  --radius: 1rem;
-
-  --chart-1: 187 70% 42%;
-  --chart-2: 173 58% 39%;
-  --chart-3: 197 37% 24%;
-  --chart-4: 43 74% 66%;
-  --chart-5: 27 87% 67%;
+  --radius: 0.75rem;
 }
 
 .dark {
-  --background: 222 47% 11%;
-  --foreground: 210 40% 98%;
-
-  --card: 222 47% 11%;
-  --card-foreground: 210 40% 98%;
-
-  --popover: 222 47% 11%;
-  --popover-foreground: 210 40% 98%;
-
-  --primary: 187 70% 42%;
-  --primary-foreground: 222 47% 11%;
-
-  --secondary: 217 32% 17%;
-  --secondary-foreground: 210 40% 98%;
-
-  --muted: 217 32% 17%;
-  --muted-foreground: 215 20% 65%;
-
-  --accent: 217 32% 17%;
-  --accent-foreground: 210 40% 98%;
-
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 210 40% 98%;
-
-  --border: 217 32% 17%;
-  --input: 217 32% 17%;
-  --ring: 187 70% 42%;
+  /* Keep it light for now as per screenshots, but strictly defined if needed */
+  --background: 0 0% 100%;
+  --foreground: 123 43% 15%;
 }
 
 @layer base {
@@ -127,7 +87,6 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-gray-50 text-foreground overflow-hidden;
-    /* Prevent scrolling on body, handle in app wrapper */
+    @apply font-sans antialiased bg-white text-foreground overflow-hidden;
   }
 }

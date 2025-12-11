@@ -1,29 +1,18 @@
 import { Switch, Route, useLocation } from "wouter";
 import { Layout } from "@/components/layout/Layout";
 import HomePage from "@/pages/home";
-import ScanPage from "@/pages/scan";
-import ResultsPage from "@/pages/results";
-import ProfilePage from "@/pages/profile";
-import HistoryPage from "@/pages/history";
+import RightsPage from "@/pages/rights";
+import InjuriesPage from "@/pages/injuries";
 import NotFound from "@/pages/not-found";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "./lib/queryClient";
 import { Toaster } from "@/components/ui/toaster";
 
 function App() {
-  const [location] = useLocation();
-  
-  // Pages that don't need the standard layout wrapper with bottom nav
-  const noLayoutPages = ["/scan"];
-  const isNoLayout = noLayoutPages.includes(location);
-
   return (
     <QueryClientProvider client={queryClient}>
       <Switch>
-        
-        {/* Main App Routes */}
         <Route path="/">
-           {/* Redirect to home initially */}
            <Layout><HomePage /></Layout>
         </Route>
 
@@ -31,21 +20,26 @@ function App() {
           <Layout><HomePage /></Layout>
         </Route>
         
-        <Route path="/scan">
-           {/* Scan page has its own immersive layout */}
-           <MobileFrameWrapper><ScanPage /></MobileFrameWrapper>
+        <Route path="/rights">
+           <Layout><RightsPage /></Layout>
         </Route>
 
-        <Route path="/results">
-          <Layout><ResultsPage /></Layout>
+        <Route path="/injuries">
+           <Layout><InjuriesPage /></Layout>
         </Route>
 
-        <Route path="/profile">
-          <Layout><ProfilePage /></Layout>
+        {/* Placeholders for other routes */}
+        <Route path="/prevention">
+           <Layout><InjuriesPage /></Layout> {/* Reusing layout for now */}
         </Route>
-
-        <Route path="/history">
-          <Layout><HistoryPage /></Layout>
+        <Route path="/alarms">
+           <Layout><HomePage /></Layout> {/* Reusing layout for now */}
+        </Route>
+         <Route path="/search">
+           <Layout><HomePage /></Layout> {/* Reusing layout for now */}
+        </Route>
+         <Route path="/patients">
+           <Layout><HomePage /></Layout> {/* Reusing layout for now */}
         </Route>
 
         <Route component={NotFound} />
@@ -53,11 +47,6 @@ function App() {
       <Toaster />
     </QueryClientProvider>
   );
-}
-
-import { MobileFrame } from "@/components/layout/MobileFrame";
-function MobileFrameWrapper({ children }: { children: React.ReactNode }) {
-  return <MobileFrame>{children}</MobileFrame>;
 }
 
 export default App;
