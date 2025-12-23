@@ -14,6 +14,7 @@ import WhatAreInjuriesPage from "@/pages/injuries-what-are";
 import CausesPage from "@/pages/injuries-causes";
 import StagesPage from "@/pages/injuries-stages";
 import RiskPage from "@/pages/injuries-risk";
+import ClassRisk from "@/pages/injuries-class";
 import PreventionPage from "@/pages/injuries-prevention";
 import AlarmsPage from "@/pages/alarms";
 import PatientsPage from "@/pages/patients";
@@ -63,6 +64,9 @@ function App() {
            <Layout><RiskPage /></Layout>
         </Route>
 
+         <Route path="/injuries/class">
+           <Layout><ClassRisk/></Layout>
+        </Route>
         <Route path="/injuries/prevention">
            <Layout><PreventionPage /></Layout>
         </Route>

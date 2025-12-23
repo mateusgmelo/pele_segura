@@ -8,7 +8,7 @@ export default function InjuriesPage() {
     { label: "2. Principais causas", path: "/injuries/causes" },
     { label: "3. Estágios das lesões", path: "/injuries/stages" },
     { label: "4. Quem tem maior risco?", path: "/injuries/risk" },
-    { label: "5. Classificação do risco", path: "/injuries/risk" }, // Reusing for now as per instructions usually duplicate screens
+    { label: "5. Classificação do risco", path: "/injuries/class" }, // Reusing for now as per instructions usually duplicate screens
     { label: "6. Como prevenir", path: "/injuries/prevention" }
   ];
 
@@ -27,10 +27,12 @@ export default function InjuriesPage() {
         <h1 className="text-2xl font-bold text-primary tracking-wide text-center">Lesões por Pressão</h1>
         
         <div className="relative mb-2">
-            <User size={40} className="text-primary/80" strokeWidth={1.5} />
-            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-1">
-                <div className="h-1 w-1 bg-red-400 rounded-full"></div>
-                <div className="h-1 w-1 bg-red-400 rounded-full translate-y-2"></div>
+            <div className="relative">
+          <img
+            src="/Lesao_icon.png"
+            alt="Lesão por pressão"
+            className="h-16 w-16 opacity-80"
+          />
             </div>
         </div>
       </div>

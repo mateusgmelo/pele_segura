@@ -3,27 +3,31 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
+import imagem from "@/public/lesao.png";
 
 export default function WhatAreInjuriesPage() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
-  const slides = [
+  const slides: Slide[] = [
     {
-      text: "São lesões ou feridas causadas pela falta de mudança de posição do paciente ou dificuldade de se locomover.",
-      image: "https://images.unsplash.com/photo-1516574187841-693083f69b29?auto=format&fit=crop&q=80&w=400",
-      alt: "Paciente acamado"
+      text: "As Lesões por Pressão são machucados que aparecem na pele de pacientes que têm dificuldade para se movimentar. Essas lesões podem ser tão graves que o ferimento na pele pode mostrar o osso. Geralmente elas aparecem perto do encontro de ossos, onde a pele é fina, com pouco músculo e gordura.",
+      image: '/acamado.png'
     },
     {
-      text: "As partes do corpo que têm mais chances de desenvolver lesões por pressão são aquelas onde há proeminências ósseas (partes onde o osso fica mais próximo da pele) ou onde a pele sofre pressão, fricção (atrito), cisalhamento (deslizamento) ou umidade.",
-      image: "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=400",
-      alt: "Anatomia"
+      text:
+        "O peso do corpo aperta a pele contra o leito ou cadeira de rodas, assim o sangue acaba não passando por todas as áreas, comprometendo a circulação e causando as lesões por pressão, que começam com uma mudança na coloração na pele e podem virar feridas abertas. O contato com lençóis ou roupas ásperas, e a forma como o paciente é posicionado também podem causar as lesões.",
+      image:
+        "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=400",
+      alt: "Anatomia",
     },
     {
-       text: "Isso ocorre especialmente em pessoas com pouca mobilidade ou que permanecem muito tempo na mesma posição.",
-       image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?auto=format&fit=crop&q=80&w=400",
-       alt: "Cuidado"
-    }
+      text: "Partes do corpo que tem mais chance de desenvolver lesões:",
+      image: "/lesao.png",
+      alt: "Cuidado",
+    },
+     
   ];
+
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % slides.length);
@@ -57,9 +61,11 @@ export default function WhatAreInjuriesPage() {
         <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm flex-1 mb-4 flex flex-col relative">
           
           <div className="flex-1 flex flex-col">
-             <p className="text-primary text-sm font-medium leading-relaxed text-center min-h-[80px] flex items-center justify-center">
-                {slides[currentSlide].text}
-            </p>
+            <p className="text-primary text-sm font-medium leading-relaxed text-justify min-h-[80px]">
+  {slides[currentSlide].text}
+</p>
+
+
             
             <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-48 h-48 bg-gray-200 shrink-0">
                 <img 
