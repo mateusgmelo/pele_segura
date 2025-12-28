@@ -9,13 +9,15 @@ import imagem3 from "@/public/hidratante.png";
 import imagem4 from "@/public/curativo.png";
 import imagem5 from "@/public/agua.png";
 import imagem6 from "@/public/reposicionamento.png";
-import imagem7 from "@/public/cadeira_roda.png";
+import imagem7 from "@/public/cadeira1.png";
 import imagem8 from "@/public/transferencia.png";
 import imagem9 from "@/public/superficie.png";
 import imagem10 from "@/public/superficie2.png";
 import imagem11 from "@/public/almofada.png";
 import imagem12 from "@/public/furocentral.png";
 import imagem13 from "@/public/visualizar_pele.png";
+import imagem14 from "@/public/cadeira2.png";
+import imagem15 from "@/public/cadeira3.png";
 export default function estagios() {
   const [currentSlide, setCurrentSlide] = useState(0);
 type Slide = {
@@ -58,12 +60,19 @@ type Slide = {
     },
     {
       text: "Na cadeira de rodas, o alívio da pressão é realizado com superfícies de suporte e estratégias de reposicionamento mais frequentes devido à maior pressão do corpo nas áreas de encontro de ossos, como na coluna e quadril. \nPortanto é fundamental realizar a mudança de posição a cada 15 a 30 minutos conforme a imagem a seguir: ",
-      image: "/cadeira_roda.png",
+      image: "/cadeira1.png",
       
     },
     {
       text: "Durante a transferência de um paciente de um local para outro, como do leito para a cadeira de rodas ou para uma maca, deve-se ter o maior cuidado para não arrastar o paciente sobre o leito, para isso é necessário contar com a ajuda de pelo menos mais uma pessoa, a depender do peso e tamanho do paciente. ",
-      image: "/transferencia.png",
+      image: "/cadeira2.png",
+      
+      
+    },
+    {
+      text: " E por último levante as pernas.",
+      image: "/cadeira3.png",
+      
       
     },
      {
@@ -127,17 +136,17 @@ type Slide = {
         <div className="flex flex-col items-center gap-2 mt-2">
           <h1 className="text-xl font-bold text-primary tracking-wide text-center">Como previnir</h1>
           <div className="relative">
-             <User size={32} className="text-primary/60" strokeWidth={1.5} />
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-0.5">
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full"></div>
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full translate-y-1"></div>
-             </div>
-          </div>
+          <img
+            src="/Lesao_icon.png"
+            alt="Lesão por pressão"
+            className="h-16 w-16 opacity-80"
+          />
+        </div>
         </div>
       </div>
 
       <div className="flex-1 px-6 pb-6 overflow-y-auto flex flex-col gap-4">
-        <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm flex-1 mb-4 flex flex-col relative">
+        <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm mb-4">
           
           <div className="flex-1 flex flex-col">
             <p className="text-primary text-sm font-medium leading-relaxed text-justify whitespace-pre-line">
@@ -146,13 +155,15 @@ type Slide = {
 
 
             
-            <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-64 h-64 bg-gray-200 shrink-0">
-                <img 
-                src={slides[currentSlide].image} 
-                className="w-full h-full object-cover opacity-80" 
-                alt={slides[currentSlide].alt} 
-                />
-            </div>
+            {!slides[currentSlide].hideImage && slides[currentSlide].image && (
+  <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-64 h-64 bg-gray-200 shrink-0">
+    <img
+      src={slides[currentSlide].image}
+      className="w-full h-full object-cover opacity-80"
+      alt={slides[currentSlide].alt ?? "Imagem"}
+    />
+  </div>
+)}
           </div>
 
           {/* Navigation Arrows (Optional, but good for usability) */}

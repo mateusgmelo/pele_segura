@@ -1,39 +1,45 @@
 import { Link, useLocation } from "wouter";
-import { Home, Search, HeartHandshake } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 export function BottomNav() {
   const [location] = useLocation();
 
-  const navItems = [
-    { icon: Home, label: "Início", path: "/home" },
-    { icon: Search, label: "Pesquisar", path: "/search" },
-    { icon: HeartHandshake, label: "Pacientes", path: "/patients" },
+  const items = [
+    { label: "Início", href: "/", icon: "/Início.png" },
+    { label: "Pacientes", href: "/patients", icon: "/Pacientes.png" }, // ajuste o nome do arquivo aqui
+    { label: "Sobre", href: "/sobre", icon: "/Sobre.png" },
   ];
 
   return (
-    <div className="absolute bottom-0 left-0 right-0 bg-white border-t border-border px-6 pb-6 pt-2 z-40 h-[80px]">
-      <div className="flex justify-between items-center px-4">
-        {navItems.map((item) => {
-          const isActive = location.startsWith(item.path);
+    <nav className="bg-white border-t border-gray-200">
+      <div className="flex justify-around py-2">
+        {items.map((item) => {
+          const active = location === item.href;
+
           return (
-            <Link key={item.path} href={item.path}>
-              <div
-                className={cn(
-                  "flex flex-col items-center gap-1 cursor-pointer",
-                  isActive ? "text-primary" : "text-primary/70"
-                )}
-              >
-                <item.icon
-                  size={28}
-                  strokeWidth={2.5}
+            <Link key={item.href} href={item.href}>
+              <a className="flex flex-col items-center gap-1">
+                <img
+                  src={item.icon}
+                  alt={item.label}
+                  className={cn(
+                    "h-7 w-7 -mt-1 transition-opacity",
+                    active ? "opacity-100" : "opacity-100"
+                  )}
                 />
-                <span className="text-[12px] font-medium">{item.label}</span>
-              </div>
+                <span
+                  className={cn(
+                    "text-xs",
+                    active ? "text-primary font-semibold" : "text-primary/60"
+                  )}
+                >
+                  {item.label}
+                </span>
+              </a>
             </Link>
           );
         })}
       </div>
-    </div>
+    </nav>
   );
 }

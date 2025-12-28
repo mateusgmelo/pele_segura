@@ -5,12 +5,7 @@ import { Button } from "@/components/ui/button";
 
 export default function PatientsListPage() {
   const patients = [
-    { name: "Paciente A", color: "bg-gray-100", initials: "PA" },
-    { name: "Paciente B", color: "bg-green-200", initials: "PB" },
-    { name: "Paciente A", color: "bg-yellow-200", initials: "PC" },
-    { name: "Paciente D", color: "bg-red-300", initials: "PD" },
-    { name: "Paciente E", color: "bg-green-200", initials: "PE" },
-    { name: "Paciente F", color: "bg-orange-300", initials: "PF" },
+    
   ];
 
   return (
@@ -47,11 +42,7 @@ export default function PatientsListPage() {
 
         {/* Legend */}
         <div className="mt-12 flex flex-wrap gap-2 text-[10px] text-primary/70 font-medium justify-center">
-            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-gray-100"></div> Sem risco</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-yellow-200"></div> Baixo</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-green-200"></div> Moderado</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-orange-300"></div> Alto</div>
-            <div className="flex items-center gap-1"><div className="w-3 h-3 rounded-full bg-red-300"></div> Muito Alto</div>
+          
         </div>
       </div>
     </div>

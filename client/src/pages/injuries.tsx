@@ -8,12 +8,12 @@ export default function InjuriesPage() {
     { label: "2. Principais causas", path: "/injuries/causes" },
     { label: "3. Estágios das lesões", path: "/injuries/stages" },
     { label: "4. Quem tem maior risco?", path: "/injuries/risk" },
-    { label: "5. Classificação do risco", path: "/injuries/class" }, // Reusing for now as per instructions usually duplicate screens
-    { label: "6. Como prevenir", path: "/injuries/prevention" }
+
+    { label: "5. Como prevenir", path: "/injuries/prevention" }
   ];
 
   return (
-    <div className="flex flex-col h-full bg-[#C8E6C9]">
+    <div className="flex-1 flex-col h-full bg-[#C8E6C9]">
       {/* Header */}
       <div className="bg-[#C8E6C9] px-6 pt-6 pb-4 flex flex-col items-center gap-4">
         <div className="w-full flex items-center justify-start">

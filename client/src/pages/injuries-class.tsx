@@ -7,7 +7,7 @@ import imagem from "@/public/estagio1.png";
 import imagem2 from "@/public/estagio2.png";
 import imagem3 from "@/public/estagio3.png";
 import imagem4 from "@/public/estagio4.png";
-export default function estagios() {
+export default function Class() {
   const [currentSlide, setCurrentSlide] = useState(0);
 
   const slides: Slide[] = [
@@ -80,22 +80,25 @@ export default function estagios() {
         <div className="flex flex-col items-center gap-2 mt-2">
           <h1 className="text-xl font-bold text-primary tracking-wide text-center">Classificação de risco</h1>
           <div className="relative">
-             <User size={32} className="text-primary/60" strokeWidth={1.5} />
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-0.5">
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full"></div>
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full translate-y-1"></div>
-             </div>
-          </div>
+          <img
+            src="/Lesao_icon.png"
+            alt="Lesão por pressão"
+            className="h-16 w-16 opacity-80"
+          />
+        </div>
         </div>
       </div>
 
-      <div className="flex-1 px-6 pb-6 overflow-y-auto flex flex-col gap-4">
-        <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm flex-1 mb-4 flex flex-col relative">
+      <div className="flex-1 px-6 pb-6 flex flex-col gap-4">
+
+         <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm mb-4">
           
-          <div className="flex-1 flex flex-col">
+          <div className="flex flex-col">
             <p className="text-primary text-sm font-medium leading-relaxed text-justify whitespace-pre-line">
+      
   {slides[currentSlide].text}
 </p>
+        
 
 
             

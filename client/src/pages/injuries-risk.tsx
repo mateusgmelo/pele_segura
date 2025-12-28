@@ -13,7 +13,7 @@ export default function estagios() {
         "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=400",
     },
     {
-      text: "Idade avançada - devido a diminuição da elasticidade da pele, a pele tem menor capacidade de cicatrização em idosos.Capacidade de se mover diminuída - pacientes acamados, que utilizam cadeira de rodas ou com dificuldade de se movimentar, ficam mais tempo em uma mesma posição, muitas vezes perdem a sensação da dor, o que faz com que não tentem aliviar as áreas de risco.",
+      text: "Idade avançada - devido a diminuição da elasticidade da pele, a pele tem menor capacidade de cicatrização em idosos. Capacidade de se mover diminuída - pacientes acamados, que utilizam cadeira de rodas ou com dificuldade de se movimentar, ficam mais tempo em uma mesma posição, muitas vezes perdem a sensação da dor, o que faz com que não tentem aliviar as áreas de risco.",
     
   
     },
@@ -38,7 +38,7 @@ const prevSlide = () => {
 };
 
 return (
-  <div className="flex flex-col h-full bg-[#C8E6C9]">
+   <div className="min-h-screen flex flex-col bg-[#C8E6C9]">
     <div className="pt-6 px-6 pb-2">
       <Link href="/injuries">
         <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">
@@ -48,11 +48,11 @@ return (
       <div className="flex flex-col items-center gap-2 mt-2">
         <h1 className="text-xl font-bold text-primary tracking-wide text-center">Quem tem mais riscos?</h1>
         <div className="relative">
-          <User size={32} className="text-primary/60" strokeWidth={1.5} />
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-0.5">
-            <div className="h-0.5 w-0.5 bg-red-400 rounded-full"></div>
-            <div className="h-0.5 w-0.5 bg-red-400 rounded-full translate-y-1"></div>
-          </div>
+          <img
+            src="/Lesao_icon.png"
+            alt="Lesão por pressão"
+            className="h-16 w-16 opacity-80"
+          />
         </div>
       </div>
     </div>

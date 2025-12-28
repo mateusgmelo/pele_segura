@@ -1,0 +1,12 @@
+{
+  "expo": {
+    "extra": {
+      "eas": {
+        "projectId": "3ab0a633-70aa-48ce-bf93-26f10e8e9f83"
+      }
+    },
+    "android": {
+      "package": "mateusgmelo.pelesegura"
+    }
+  }
+}

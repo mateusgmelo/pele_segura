@@ -58,9 +58,7 @@ export default function PatientsPage() {
           </div>
 
           <div className="pt-4 space-y-3">
-             <Button className="w-full bg-[#C8E6C9] hover:bg-[#b0dcb2] text-primary/80 shadow-sm border-none rounded-lg h-10 font-medium">
-                Classificar o risco
-             </Button>
+             
              <Button className="w-full bg-[#C8E6C9] hover:bg-[#b0dcb2] text-primary/80 shadow-sm border-none rounded-lg h-10 font-medium">
                 Cadastrar paciente
              </Button>

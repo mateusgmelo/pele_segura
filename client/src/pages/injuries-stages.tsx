@@ -79,7 +79,7 @@ export default function estagios() {
 
 
             
-            <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-64 h-64 bg-gray-200 shrink-0">
+            <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-64 h- bg-gray-200 shrink-0">
                 <img 
                 src={slides[currentSlide].image} 
                 className="w-full h-full object-cover opacity-80" 
@@ -88,7 +88,7 @@ export default function estagios() {
             </div>
           </div>
 
-          {/* Navigation Arrows (Optional, but good for usability) */}
+      
           <div className="absolute top-1/2 -translate-y-1/2 left-1">
              <Button variant="ghost" size="icon" onClick={prevSlide} className="h-8 w-8 rounded-full bg-white/50 hover:bg-white text-primary">
                 <ChevronLeft size={20} />
@@ -113,7 +113,7 @@ export default function estagios() {
                 )}
              />
            ))}
-           {/* Add dummy dots to match the design's look of many dots if needed, or stick to functional ones */}
+        
            <div className="h-2 w-2 rounded-full bg-primary/10"></div>
            <div className="h-2 w-2 rounded-full bg-primary/10"></div>
            <div className="h-2 w-2 rounded-full bg-primary/10"></div>

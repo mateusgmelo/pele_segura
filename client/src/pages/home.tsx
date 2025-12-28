@@ -2,12 +2,17 @@ import { Card, CardContent } from "@/components/ui/card";
 import { BookOpenCheck, User, Bandage, Clock, Flower } from "lucide-react";
 import { Link } from "wouter";
 import Icon from "@/assets/Lesao_icon.png";
+import Icon2 from "@/assets/Direitos e deveres.png"
+import Icon3 from "@/assets/Alarmes.png"
+import Icon4 from "@/assets/Com_prevenir.png" 
 
 export default function HomePage() {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header - Green Section */}
-      <div className="bg-primary px-6 pt-8 pb-12 rounded-b-[30px] shadow-sm flex flex-col gap-6">
+      <div className="bg-primary px-9 pt-5 pb-6 shadow-sm flex flex-col gap-4">
+
+
         <div className="flex items-center gap-3">
           <img
                   src="/Logo.png"
@@ -17,7 +22,7 @@ export default function HomePage() {
           <h1 className="text-3xl font-bold text-white tracking-wide">Pele Segura</h1>
         </div>
         
-        <div className="space-y-1">
+        <div className="space-y-2">
           <p className="text-white/90 text-lg font-medium leading-relaxed">
            Olá, cuidador(a)!<br />
             Estamos aqui para ajudar você a cuidar com segurança e carinho.
@@ -26,14 +31,18 @@ export default function HomePage() {
       </div>
 
       {/* Main Grid */}
-      <div className="flex-1 px-6 -mt-4 pb-4 overflow-y-auto">
-        <div className="grid grid-cols-2 gap-4">
+      <div className="flex-1 px-6 -mt-4 pb-5 flex items-center justify-center">
+  <div className="grid grid-cols-2 gap-5 w-full max-w-[360px] mt-15">
           
           {/* Card 1: Direitos e deveres */}
           <Link href="/rights">
-            <Card className="bg-[#EAF7EE] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-              <CardContent className="p-0 flex flex-col items-center gap-3">
-                <BookOpenCheck size={40} className="text-primary/80" strokeWidth={1.5} />
+            <Card className="bg-[##EAF7EE] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
+              <CardContent className="p-0 flex flex-col items-center gap-4">
+                <img
+                  src="/Direitos e deveres.png"
+                  alt="Lesão por pressão"
+                  className="h-12 w-15 opacity-80"
+                />
                 <span className="text-sm font-semibold text-primary/90 leading-tight">
                   Direitos e deveres do(a) cuidador(a)
                 </span>
@@ -61,7 +70,11 @@ export default function HomePage() {
           <Link href="/prevention">
             <Card className="bg-[#A8D5BA] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
               <CardContent className="p-0 flex flex-col items-center gap-3">
-                <Bandage size={40} className="text-primary/80" strokeWidth={1.5} />
+                <img
+                  src="/Com_prevenir.png"
+                  alt="Lesão por pressão"
+                  className="h-12 w-12 opacity-80"
+                />
                 <span className="text-sm font-semibold text-primary/90 leading-tight">
                   Como<br/>Prevenir?
                 </span>
@@ -71,9 +84,13 @@ export default function HomePage() {
 
           {/* Card 4: Alarmes e lembretes */}
           <Link href="/alarms">
-            <Card className="bg-[#F1F8E9] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
+            <Card className="bg-[##EAF7EE] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
               <CardContent className="p-0 flex flex-col items-center gap-3">
-                <Clock size={40} className="text-primary/80" strokeWidth={1.5} />
+                <img
+                  src="/Alarmes.png"
+                  alt="Lesão por pressão"
+                  className="h-12 w-12 opacity-80"
+                />
                 <span className="text-sm font-semibold text-primary/90 leading-tight">
                   Alarmes e lembretes
                 </span>

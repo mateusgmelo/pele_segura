@@ -1,15 +1,19 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Flower, Check, CircleAlert } from "lucide-react";
 import { Link } from "wouter";
-
+import Icon from "@/assets/Lesao_icon.png";
 export default function RightsPage() {
   return (
     <div className="flex flex-col h-full bg-white">
       {/* Header - Green Section */}
-      <div className="<h-2 w-2 shrink-0 rounded-[2px] bg-[#3EAD63]></h-2>">
+      <div className="w-full bg-[#3EAD63] px-6 pt-10 pb-6">
         <div className="flex items-center gap-3">
-          <div className="h-12 w-12 bg-white rounded-2xl flex items-center justify-center shrink-0">
-             <Flower className="text-primary h-8 w-8" />
+          <div className="h-15 w-15 bg-white rounded-2xl flex items-center justify-center shrink-0">
+             <img
+                  src="/Logo.png"
+                  alt="Lesão por pressão"
+                  className="h-15 w-15 opacity-100 rounded-lg"
+                />
           </div>
           <h1 className="text-3xl font-bold text-white tracking-wide">Pele Segura</h1>
         </div>

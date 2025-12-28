@@ -3,7 +3,7 @@ import { Link } from "wouter";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { cn } from "@/lib/utils";
-import imagem from "@/public/lesao_pressao.png";
+import imagem from "@/public/2 Pressão.jpeg";
 import imagem2 from "@/public/esfragaco.png";
 import imagem3 from "@/public/deslizamento.png";
 export default function Causes() {
@@ -12,7 +12,7 @@ export default function Causes() {
   const slides: Slide[] = [
     {
       text: "Pressão: ocorre quando o paciente não muda de posição por conta própria ou não é reposicionado e a pressão gerada pelo próprio peso causa lesões.",
-      image: '/lesao_pressao.png'
+      image: '/2 Pressão.jpeg'
     },
     {
       text:
@@ -38,7 +38,7 @@ export default function Causes() {
   };
 
   return (
-    <div className="flex flex-col h-full bg-[#C8E6C9]">
+     <div className="min-h-screen flex flex-col bg-[#C8E6C9]">
       <div className="pt-6 px-6 pb-2">
          <Link href="/injuries">
             <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">
@@ -48,26 +48,27 @@ export default function Causes() {
         <div className="flex flex-col items-center gap-2 mt-2">
           <h1 className="text-xl font-bold text-primary tracking-wide text-center">Principais Causas?</h1>
           <div className="relative">
-             <User size={32} className="text-primary/60" strokeWidth={1.5} />
-             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex gap-0.5">
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full"></div>
-                 <div className="h-0.5 w-0.5 bg-red-400 rounded-full translate-y-1"></div>
-             </div>
-          </div>
+          <img
+            src="/Lesao_icon.png"
+            alt="Lesão por pressão"
+            className="h-16 w-16 opacity-80"
+          />
+        </div>
         </div>
       </div>
 
-      <div className="flex-1 px-6 pb-6 overflow-y-auto flex flex-col gap-4">
-        <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm flex-1 mb-4 flex flex-col relative">
+     <div className="flex-1 px-6 pb-6 flex flex-col gap-4">
+
+        <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm mb-4 flex flex-col relative">
           
-          <div className="flex-1 flex flex-col">
+          <div className="flex flex-col">
             <p className="text-primary text-sm font-medium leading-relaxed text-justify min-h-[80px]">
               {slides[currentSlide].text}
             </p>
 
 
             
-            <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-42 h-42 bg-gray-200 shrink-0">
+            <div className="mt-8 rounded-2xl overflow-hidden border-4 border-white shadow-sm mx-auto w-60 h-60 bg-gray-200 shrink-0">
                 <img 
                 src={slides[currentSlide].image} 
                 className="w-full h-full object-cover opacity-80" 

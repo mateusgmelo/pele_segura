@@ -19,6 +19,7 @@ import PreventionPage from "@/pages/injuries-prevention";
 import AlarmsPage from "@/pages/alarms";
 import PatientsPage from "@/pages/patients";
 import PatientsListPage from "@/pages/patients-list";
+import SobrePage from "@/pages/Sobre";
 
 function App() {
   return (
@@ -84,6 +85,9 @@ function App() {
         <Route path="/patients">
            <Layout><PatientsListPage /></Layout>
         </Route>
+           <Route path="/sobre">
+              <Layout><SobrePage /></Layout>
+           </Route>
         <Route path="/patients/new">
            <Layout><PatientsPage /></Layout>
         </Route>
