@@ -8,10 +8,15 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   return (
     <MobileFrame>
-      <div className="flex flex-col min-h-full pb-[80px]">
-        {children}
+      {/* Wrapper relativo para a BottomNav ficar presa no fundo do frame */}
+      <div className="relative flex flex-col min-h-full">
+        {/* Conteúdo com padding-bottom pra não ficar por baixo da nav */}
+        <div className="flex flex-col min-h-full pb-[92px]">
+          {children}
+        </div>
+
+        <BottomNav />
       </div>
-      <BottomNav />
     </MobileFrame>
   );
 }

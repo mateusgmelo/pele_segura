@@ -6,19 +6,26 @@ export function BottomNav() {
 
   const items = [
     { label: "Início", href: "/", icon: "/Início.png" },
-    { label: "Pacientes", href: "/patients", icon: "/Pacientes.png" }, // ajuste o nome do arquivo aqui
+    { label: "Pacientes", href: "/patients", icon: "/Pacientes.png" },
     { label: "Sobre", href: "/sobre", icon: "/Sobre.png" },
   ];
 
   return (
-    <nav className="bg-white border-t border-gray-200">
+    <nav
+      className="
+        absolute bottom-0 left-0 right-0 z-[9999]
+        bg-white
+        border-t border-gray-200/60
+        pb-[env(safe-area-inset-bottom)]
+      "
+    >
       <div className="flex justify-around py-2">
         {items.map((item) => {
           const active = location === item.href;
 
           return (
             <Link key={item.href} href={item.href}>
-              <a className="flex flex-col items-center gap-1">
+              <a className="flex flex-col items-center gap-1 px-4 py-1">
                 <img
                   src={item.icon}
                   alt={item.label}

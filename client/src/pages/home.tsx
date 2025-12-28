@@ -1,103 +1,90 @@
-import { Card, CardContent } from "@/components/ui/card";
-import { BookOpenCheck, User, Bandage, Clock, Flower } from "lucide-react";
 import { Link } from "wouter";
-import Icon from "@/assets/Lesao_icon.png";
-import Icon2 from "@/assets/Direitos e deveres.png"
-import Icon3 from "@/assets/Alarmes.png"
-import Icon4 from "@/assets/Com_prevenir.png" 
 
-export default function HomePage() {
+export default function Home() {
   return (
-    <div className="flex flex-col h-full bg-white">
-      {/* Header - Green Section */}
-      <div className="bg-primary px-9 pt-5 pb-6 shadow-sm flex flex-col gap-4">
-
-
+    <div className="flex flex-col min-h-screen bg-white pb-24">
+      {/* Header */}
+      <div className="bg-[#388E3C] px-6 pt-6 pb-6">
         <div className="flex items-center gap-3">
-          <img
-                  src="/Logo.png"
-                  alt="Lesão por pressão"
-                  className="h-15 w-15 opacity-100 rounded-lg"
-                />
-          <h1 className="text-3xl font-bold text-white tracking-wide">Pele Segura</h1>
+          <div className="h-12 w-12 rounded-2xl bg-white/90 flex items-center justify-center overflow-hidden">
+            <img
+              src="/Logo.png"
+              alt="Pele Segura"
+              className="h-10 w-10 object-contain"
+            />
+          </div>
+
+          <h1 className="text-2xl font-extrabold text-white tracking-wide">
+            Pele Segura
+          </h1>
         </div>
-        
-        <div className="space-y-2">
-          <p className="text-white/90 text-lg font-medium leading-relaxed">
-           Olá, cuidador(a)!<br />
+
+        <div className="mt-4 text-white">
+          <p className="text-lg font-bold">Olá, cuidador(a)!</p>
+          <p className="mt-1 text-sm font-semibold leading-relaxed max-w-[320px]">
             Estamos aqui para ajudar você a cuidar com segurança e carinho.
           </p>
         </div>
       </div>
 
-      {/* Main Grid */}
-      <div className="flex-1 px-6 -mt-4 pb-5 flex items-center justify-center">
-  <div className="grid grid-cols-2 gap-5 w-full max-w-[360px] mt-15">
-          
-          {/* Card 1: Direitos e deveres */}
+      {/* Cards */}
+      <div className="flex-1 px-6 pt-6 flex items-start justify-center">
+        <div className="grid grid-cols-2 gap-5 w-full max-w-[360px]">
+          {/* Card 1 */}
           <Link href="/rights">
-            <Card className="bg-[##EAF7EE] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-              <CardContent className="p-0 flex flex-col items-center gap-4">
-                <img
-                  src="/Direitos e deveres.png"
-                  alt="Lesão por pressão"
-                  className="h-12 w-15 opacity-80"
-                />
-                <span className="text-sm font-semibold text-primary/90 leading-tight">
-                  Direitos e deveres do(a) cuidador(a)
-                </span>
-              </CardContent>
-            </Card>
+            <a className="bg-white rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+              <img
+                src="/Direitos e deveres.png"
+                alt="Direitos e deveres do(a) cuidador(a)"
+                className="h-12 w-15 opacity-80"
+              />
+              <p className="mt-3 text-center text-sm font-semibold text-[#2E7D32] leading-snug">
+                Direitos e deveres do(a) cuidador(a)
+              </p>
+            </a>
           </Link>
 
-          {/* Card 2: Lesões por Pressão */}
+          {/* Card 2 */}
           <Link href="/injuries">
-            <Card className="bg-[#A8D5BA] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-              <CardContent className="p-0 flex flex-col items-center gap-3">
-                <img
-                  src="/Lesao_icon.png"
-                  alt="Lesão por pressão"
-                  className="h-15 w-15 opacity-80"
-                />
-                <span className="text-sm font-semibold text-primary/90 leading-tight">
-                  Lesões por Pressão
-                </span>
-              </CardContent>
-            </Card>
+            <a className="bg-[#A7D8B4] rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+              <img
+                src="/Lesao_icon.png"
+                alt="Lesões por Pressão"
+                className="h-12 w-12 opacity-80"
+              />
+              <p className="mt-3 text-center text-sm font-semibold text-[#2E7D32] leading-snug">
+                Lesões por Pressão
+              </p>
+            </a>
           </Link>
 
-          {/* Card 3: Como Prevenir */}
+          {/* Card 3 */}
           <Link href="/prevention">
-            <Card className="bg-[#A8D5BA] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-              <CardContent className="p-0 flex flex-col items-center gap-3">
-                <img
-                  src="/Com_prevenir.png"
-                  alt="Lesão por pressão"
-                  className="h-12 w-12 opacity-80"
-                />
-                <span className="text-sm font-semibold text-primary/90 leading-tight">
-                  Como<br/>Prevenir?
-                </span>
-              </CardContent>
-            </Card>
+            <a className="bg-[#A7D8B4] rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+              <img
+                src="/Com_prevenir.png"
+                alt="Como Prevenir?"
+                className="h-12 w-12 opacity-80"
+              />
+              <p className="mt-3 text-center text-sm font-semibold text-[#2E7D32] leading-snug">
+                Como <br /> Prevenir?
+              </p>
+            </a>
           </Link>
 
-          {/* Card 4: Alarmes e lembretes */}
+          {/* Card 4 */}
           <Link href="/alarms">
-            <Card className="bg-[##EAF7EE] border-none shadow-sm hover:shadow-md transition-shadow cursor-pointer aspect-square flex flex-col items-center justify-center text-center p-2">
-              <CardContent className="p-0 flex flex-col items-center gap-3">
-                <img
-                  src="/Alarmes.png"
-                  alt="Lesão por pressão"
-                  className="h-12 w-12 opacity-80"
-                />
-                <span className="text-sm font-semibold text-primary/90 leading-tight">
-                  Alarmes e lembretes
-                </span>
-              </CardContent>
-            </Card>
+            <a className="bg-white rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+              <img
+                src="/Alarmes.png"
+                alt="Alarmes e lembretes"
+                className="h-12 w-12 opacity-80"
+              />
+              <p className="mt-3 text-center text-sm font-semibold text-[#2E7D32] leading-snug">
+                Alarmes e lembretes
+              </p>
+            </a>
           </Link>
-
         </div>
       </div>
     </div>
