@@ -1,7 +1,7 @@
 import { Link, useLocation } from "wouter";
 import { cn } from "@/lib/utils";
 
-export function BottomNav() {
+export default function BottomNav() {
   const [location] = useLocation();
 
   const items = [

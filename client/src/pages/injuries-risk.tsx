@@ -38,7 +38,7 @@ const prevSlide = () => {
 };
 
 return (
-   <div className="min-h-screen flex flex-col bg-[#C8E6C9]">
+   <div className="flex flex-col h-full bg-[#C8E6C9]">
     <div className="pt-6 px-6 pb-2">
       <Link href="/injuries">
         <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">
@@ -61,7 +61,7 @@ return (
       <div className="bg-[#E8F5E9] rounded-3xl p-6 shadow-sm flex-1 mb-4 flex flex-col relative">
 
         <div className="flex-1 flex flex-col">
-          <p className="text-primary text-sm font-medium leading-relaxed text-justify min-h-[80px]">
+          <p className="text-primary text-sm font-medium leading-relaxed text-justify">
   {slides[currentSlide].text}
 </p>
 

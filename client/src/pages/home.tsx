@@ -2,7 +2,11 @@ import { Link } from "wouter";
 
 export default function Home() {
   return (
-    <div className="flex flex-col min-h-screen bg-white pb-24">
+    // Use `h-full` instead of `min-h-screen` and remove the large bottom
+    // padding. This prevents the content from becoming taller than the
+    // available mobile frame and makes sure the bottom navigation is visible
+    // without any extra scrolling.
+    <div className="flex flex-col h-full bg-white">
       {/* Header */}
       <div className="bg-[#388E3C] px-6 pt-6 pb-6">
         <div className="flex items-center gap-3">
@@ -32,7 +36,7 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-5 w-full max-w-[360px]">
           {/* Card 1 */}
           <Link href="/rights">
-            <a className="bg-white rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+            <a className="bg-[#E8F5E9] rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
               <img
                 src="/Direitos e deveres.png"
                 alt="Direitos e deveres do(a) cuidador(a)"
@@ -74,7 +78,7 @@ export default function Home() {
 
           {/* Card 4 */}
           <Link href="/alarms">
-            <a className="bg-white rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
+            <a className="bg-[#E8F5E9] rounded-3xl shadow-sm border border-black/5 p-5 flex flex-col items-center justify-center h-36 active:scale-[0.99] transition">
               <img
                 src="/Alarmes.png"
                 alt="Alarmes e lembretes"

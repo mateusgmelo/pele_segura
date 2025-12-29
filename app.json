@@ -6,7 +6,8 @@
       }
     },
     "android": {
-      "package": "mateusgmelo.pelesegura"
-    }
+      "package": "pelesegura"
+    },
+    "icon": "./client/public/Logo.png"
   }
 }

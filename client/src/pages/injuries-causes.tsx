@@ -38,7 +38,7 @@ export default function Causes() {
   };
 
   return (
-     <div className="min-h-screen flex flex-col bg-[#C8E6C9]">
+     <div className="flex flex-col h-full bg-[#C8E6C9]">
       <div className="pt-6 px-6 pb-2">
          <Link href="/injuries">
             <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">

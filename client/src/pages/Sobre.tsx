@@ -4,10 +4,13 @@ import { Button } from "@/components/ui/button";
 
 export default function AboutPage() {
   return (
-    // min-h-full (não h-full) + flex-col
+    // Fill the available height and paint the background all the way down. Using
+    // `min-h-full` on the outer container and removing the empty flex spacer
+    // prevents any white gap from appearing beneath the content.
     <div className="min-h-full flex flex-col">
       {/* este wrapper é quem pinta o fundo e ocupa TODO o espaço acima da BottomNav */}
-      <div className="flex-1 bg-[#C8E6C9] flex flex-col">
+      <div className="flex-1 flex-col flex-1 bg-[#C8E6C9]">
+
         {/* Top */}
         <div className="pt-6 px-6 pb-3">
           <Link href="/">
@@ -46,9 +49,6 @@ export default function AboutPage() {
             </div>
           </div>
         </div>
-
-        {/* espaço restante agora fica verde */}
-        <div className="flex-1" />
       </div>
     </div>
   );

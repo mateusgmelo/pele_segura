@@ -1,22 +1,18 @@
-import { MobileFrame } from "./MobileFrame";
-import { BottomNav } from "./BottomNav";
+import { ReactNode } from "react";
+import BottomNav from "./BottomNav";
 
-interface LayoutProps {
-  children: React.ReactNode;
-}
-
-export function Layout({ children }: LayoutProps) {
+export default function Layout({ children }: { children: ReactNode }) {
   return (
-    <MobileFrame>
-      {/* Wrapper relativo para a BottomNav ficar presa no fundo do frame */}
-      <div className="relative flex flex-col min-h-full">
-        {/* Conteúdo com padding-bottom pra não ficar por baixo da nav */}
-        <div className="flex flex-col min-h-full pb-[92px]">
+    <div className="flex flex-col h-full min-h-0">
+      {/* MAIN: precisa ser transparente e permitir o filho esticar */}
+      <main className="flex-1 min-h-0 bg-transparent">
+        {/* WRAPPER que garante altura total */}
+        <div className="flex flex-col h-full min-h-0">
           {children}
         </div>
+      </main>
 
-        <BottomNav />
-      </div>
-    </MobileFrame>
+      <BottomNav />
+    </div>
   );
 }

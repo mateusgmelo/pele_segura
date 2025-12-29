@@ -1,44 +1,150 @@
-import { ArrowLeft, Clock } from "lucide-react";
-import { Link } from "wouter";
+import { useState } from "react";
+import { ArrowLeft, HeartHandshake } from "lucide-react";
+import { Link, useLocation } from "wouter";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { addPatient } from "@/lib/storage";
 
-export default function AlarmsPage() {
+function getInitials(fullName: string) {
+  const parts = fullName.trim().split(/\s+/).filter(Boolean);
+  if (parts.length === 0) return "P";
+  if (parts.length === 1) return parts[0].slice(0, 2).toUpperCase();
+  return (parts[0][0] + parts[1][0]).toUpperCase();
+}
+
+export default function PatientsPage() {
+  const [, setLocation] = useLocation();
+
+  const [name, setName] = useState("");
+  const [dob, setDob] = useState("");
+  const [age, setAge] = useState("");
+  const [mother, setMother] = useState("");
+  const [hospital, setHospital] = useState("");
+  const [sector, setSector] = useState("");
+  const [bed, setBed] = useState("");
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    if (!name.trim()) return;
+
+    addPatient({
+      name: name.trim(),
+      dob: dob.trim(),
+      age: age.trim(),
+      mother: mother.trim(),
+      hospital: hospital.trim(),
+      sector: sector.trim(),
+      bed: bed.trim(),
+      initials: getInitials(name),
+    });
+
+    setLocation("/patients");
+  }
+
   return (
-    <div className="flex flex-col h-full bg-[#E8F5E9]">
+    <div className="flex flex-col flex-1 bg-[#E8F5E9]">
+      {/* Header */}
       <div className="pt-6 px-6 pb-2">
-         <Link href="/home">
-            <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">
-                <ArrowLeft className="text-primary h-8 w-8" strokeWidth={2.5} />
-            </Button>
+        <Link href="/patients">
+          <Button variant="ghost" className="p-0 hover:bg-transparent -ml-2">
+            <ArrowLeft className="text-primary h-8 w-8" strokeWidth={2.5} />
+          </Button>
         </Link>
-        <div className="flex flex-col items-center gap-2 mt-2">
-          <h1 className="text-xl font-bold text-primary tracking-wide text-center">Alarmes e lembretes</h1>
-          <Clock size={40} className="text-primary/80" strokeWidth={1.5} />
+
+        <div className="flex flex-col items-center gap-3 mt-2">
+          <h1 className="text-3xl font-extrabold text-primary tracking-wide text-center">
+            Novo Paciente
+          </h1>
+          <HeartHandshake size={44} className="text-primary/80" strokeWidth={1.5} />
         </div>
       </div>
 
-      <div className="flex-1 px-6 pb-6 overflow-y-auto">
-        <h2 className="text-sm font-bold text-primary mb-4 ml-1">Paciente A</h2>
-        
-        <div className="space-y-4">
-          <div className="bg-[#C8E6C9] rounded-xl p-4 flex items-center justify-between shadow-sm">
-            <span className="text-primary font-medium text-sm">Reposicionar o paciente</span>
-            <Switch defaultChecked className="data-[state=checked]:bg-primary" />
+      {/* Form */}
+      <form onSubmit={handleSubmit} className="flex-1 px-6 pb-6 overflow-y-auto">
+        <div className="space-y-4 mt-6">
+          <div>
+            <Label className="text-xs text-primary/80 font-medium ml-1">Nome completo</Label>
+            <Input
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl text-lg"
+              placeholder="Paciente G"
+            />
           </div>
 
-          <div className="bg-[#C8E6C9] rounded-xl p-4 flex items-center justify-between shadow-sm">
-            <span className="text-primary font-medium text-sm">Hidratar a pele</span>
-            <Switch className="data-[state=checked]:bg-primary" />
+          <div className="grid grid-cols-2 gap-4">
+            <div>
+              <Label className="text-xs text-primary/80 font-medium ml-1">Data de nascimento</Label>
+              <Input
+                value={dob}
+                onChange={(e) => setDob(e.target.value)}
+                className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+                placeholder="01/12/1950"
+              />
+            </div>
+
+            <div>
+              <Label className="text-xs text-primary/80 font-medium ml-1">Idade</Label>
+              <Input
+                value={age}
+                onChange={(e) => setAge(e.target.value)}
+                className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+                placeholder="74 anos"
+              />
+            </div>
           </div>
 
-          <div className="text-center mt-6">
-            <button className="text-primary font-medium text-sm hover:underline">
-               + Novo alarme/lembrete
-            </button>
+          <div>
+            <Label className="text-xs text-primary/80 font-medium ml-1">Nome da mãe</Label>
+            <Input
+              value={mother}
+              onChange={(e) => setMother(e.target.value)}
+              className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+              placeholder="Mãe G"
+            />
+          </div>
+
+          <div>
+            <Label className="text-xs text-primary/80 font-medium ml-1">Hospital</Label>
+            <Input
+              value={hospital}
+              onChange={(e) => setHospital(e.target.value)}
+              className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+              placeholder="Hospital Florence"
+            />
+          </div>
+
+          <div>
+            <Label className="text-xs text-primary/80 font-medium ml-1">Setor/Ala/Enfermaria</Label>
+            <Input
+              value={sector}
+              onChange={(e) => setSector(e.target.value)}
+              className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+              placeholder="Enfermaria 13"
+            />
+          </div>
+
+          <div>
+            <Label className="text-xs text-primary/80 font-medium ml-1">Leito</Label>
+            <Input
+              value={bed}
+              onChange={(e) => setBed(e.target.value)}
+              className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
+              placeholder="54"
+            />
+          </div>
+
+          <div className="pt-6">
+            <Button
+              type="submit"
+              className="w-full bg-[#C8E6C9] hover:bg-[#b0dcb2] text-primary/80 shadow-sm border-none rounded-xl h-12 font-medium"
+            >
+              Cadastrar paciente
+            </Button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   );
 }
