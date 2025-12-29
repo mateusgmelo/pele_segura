@@ -73,7 +73,7 @@ export default function PatientsPage() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl text-lg"
-              placeholder="Paciente G"
+              placeholder=""
             />
           </div>
 
@@ -97,7 +97,7 @@ export default function PatientsPage() {
                 value={age}
                 onChange={(e) => setAge(e.target.value)}
                 className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
-                placeholder="74 anos"
+                placeholder=""
               />
             </div>
           </div>
@@ -108,7 +108,7 @@ export default function PatientsPage() {
               value={mother}
               onChange={(e) => setMother(e.target.value)}
               className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
-              placeholder="Mãe G"
+              placeholder=""
             />
           </div>
 
@@ -118,7 +118,7 @@ export default function PatientsPage() {
               value={hospital}
               onChange={(e) => setHospital(e.target.value)}
               className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
-              placeholder="Hospital Florence"
+              placeholder=""
             />
           </div>
 
@@ -128,7 +128,7 @@ export default function PatientsPage() {
               value={sector}
               onChange={(e) => setSector(e.target.value)}
               className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
-              placeholder="Enfermaria 13"
+              placeholder=""
             />
           </div>
 
@@ -138,7 +138,7 @@ export default function PatientsPage() {
               value={bed}
               onChange={(e) => setBed(e.target.value)}
               className="bg-[#C8E6C9] border-0 shadow-sm h-10 rounded-xl"
-              placeholder="54"
+              placeholder=""
             />
           </div>
 

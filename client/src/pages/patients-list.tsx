@@ -24,11 +24,11 @@ export default function PatientsListPage() {
 
         <Link href="/patients/new">
           <div className="absolute right-6 top-7 bg-[#C8E6C9] px-3 py-1 rounded-md text-xs font-bold text-primary flex items-center gap-1 cursor-pointer shadow-sm">
-            <Plus size={14} strokeWidth={3} /> Novo Paciente
+            <Plus size={14} strokeWidth={5} /> Novo Paciente
           </div>
         </Link>
 
-        <div className="flex flex-col items-center gap-2 mt-2">
+        <div className="flex flex-col items-center gap-2 mt-10">
           <h1 className="text-3xl font-extrabold text-primary tracking-wide text-center">
             Pacientes
           </h1>
